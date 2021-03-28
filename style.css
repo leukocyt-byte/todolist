@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Architects Daughter", cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  border: 2px solid #2196f3;
+  border-radius: 16px;
+  max-width: 350px;
+  height: 115px;
+  transition-duration: 1s;
+}
+
+.small {
+  max-width: 350px;
+  height: 80px;
+  transition-duration: 1s;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.li {
+  list-style: none;
+  justify-content: center;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28px;
+  width: 28px;
+  background-color: #2196f3;
+  /* border-radius: 50%; */
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btn-style {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 7px;
+  margin-left: 8px;
+  outline: none;
+}
+
+.non-icon {
+  font-family: "Architects Daughter", cursive;
+  padding: 5px;
+}
+
+.new-task-input {
+  border: #2196f3 solid 1px;
+  color: rgb(116, 154, 236);
+  width: 200px;
+  font-size: 1rem;
+  font-family: "Architects Daughter", cursive;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 50%;
+}
+.colors {
+  margin-top: 70px;
+}
+
+.color-picker {
+  display: inline;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 60px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.color-picker input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.red {
+  background: rgb(240, 107, 140);
+}
+
+.yellow {
+  background: rgb(245, 245, 152);
+}
+
+.pink {
+  background: rgb(222, 97, 226);
+}
+
+.blue {
+  background: rgb(116, 154, 236);
+}
+
+[input-color="redBg"] {
+  background: rgb(255, 192, 207);
+}
+
+[input-color="yellowBg"] {
+  background: rgb(253, 253, 242);
+}
+
+[input-color="pinkBg"] {
+  background: rgb(250, 189, 252);
+}
+
+[input-color="blueBg"] {
+  background: rgb(225, 234, 255);
+}
+
+[input-color="blank"] {
+  background: white;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark-color:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.color-picker input:checked ~ .checkmark-color:after {
+  display: inline;
+}
+
+/* Style the indicator (dot/circle) */
+.color-picker .checkmark-color:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.hidden {
+  display: none;
+  transition-duration: 2s;
+}
+
+.invisibile {
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    margin-top: 20px;
+    max-width: 100vh;
+    height: 115px;
+  }
+
+  .small {
+    max-width: 350px;
+    height: 80px;
+    transition-duration: 1s;
+  }
+
+  .new-task-input {
+    max-width: 130px;
+    font-size: 0.8rem;
+  }
+}
